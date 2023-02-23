@@ -16,7 +16,7 @@ german(){
 }
 
 english(){
-    bash <(curl https://raw.githubusercontent.com/CatValentine-Dev/pterodactylthemes/main/instaladorenglish.sh)
+    bash <(curl https://raw.githubusercontent.com/wffzy/pterodactylthemes/main/instaladorenglish.sh)
 }
 
     CYAN='\033[0;36m'
