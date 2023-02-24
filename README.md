@@ -1,4 +1,4 @@
-TemuxOS Themes
+NextSekai Themes
 Install script:
 ```sh
 bash <(curl https://raw.githubusercontent.com/wffzy/pterodactylthemes/main/install.sh)
