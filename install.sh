@@ -17,19 +17,21 @@ instalartema(){
     cd pterodactylthemes
     rm /var/www/pterodactyl/resources/scripts/pterodactylthemes.css
     rm /var/www/pterodactyl/resources/scripts/index.tsx
+    rm /var/www/pterodactyl/resources/scripts/components/server/files/FileManagerContainer.tsx
+    mv FileManagerContainer.tsx /var/www/pterodactyl/resources/scripts/components/server/files/FileManagerContainer.tsx
     mv index.tsx /var/www/pterodactyl/resources/scripts/index.tsx
     mv pterodactylthemes.css /var/www/pterodactyl/resources/scripts/pterodactylthemes.css
     cd /var/www/pterodactyl
-
     curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
     apt update
     apt install -y nodejs
-
     npm i -g yarn
     yarn
-
     cd /var/www/pterodactyl
-    yarn build:production
+    yarn run build:production 
+    chown -R www-data:www-data * 
+    php artisan view:clear 
+    php artisan cache:clear
     sudo php artisan optimize:clear
 
 
@@ -50,10 +52,6 @@ instaladordetemas(){
     done
 }
 
-reparar(){
-    bash <(curl https://raw.githubusercontent.com/wffzy/pterodactylthemes/main/reparar.sh)
-}
-
 restaurarbackup(){
     echo "Restoring Backup..."
     cd /var/www/
@@ -66,16 +64,15 @@ restaurarbackup(){
 }
 
     CYAN='\033[0;36m'
-    echo -e "${CYAN}Copyright 2022 TemuxOS"
+    echo -e "${CYAN}Copyright 2023 NextSekai Theme"
     echo -e "${CYAN}This program is free software, you can modify and distribute it without any problems."
     echo -e ""
-    echo -e "${CYAN}Discord: https://discord.gg/WkVVtTaBRh/"
+    echo -e "${CYAN}Website : https://nextsekai.in/"
     echo -e ""
     echo -e "${CYAN} [1] Install Theme"
     echo -e "${CYAN} [2] Restore Backup"
-    echo -e "${CYAN} [3] Repair Panel (Use if you have a problem installing the themes)"
-    echo -e "${CYAN} [4] Back"
-    echo -e "${CYAN} [5] Exit"
+    echo -e "${CYAN} [3] Back"
+    echo -e "${CYAN} [0] Exit"
 
 read -p "Enter a number: " choice
 if [ $choice == "1" ]
@@ -88,14 +85,10 @@ if [ $choice == "2" ]
 fi
 if [ $choice == "3" ]
     then
-    reparar
-fi
-if [ $choice == "4" ]
-    then
     voltar
 fi
  
-if [ $choice == "5"]
+if [ $choice == "0"]
     then
     exit
 fi
