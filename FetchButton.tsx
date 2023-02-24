@@ -81,7 +81,7 @@ export default ({ className }: WithClassname) => {
                             </p>
                             <div css={tw`flex justify-end`}>
                                 <Button css={tw`mt-8`}>
-                                    Fetch
+                                    Upload From Url
                                 </Button>
                             </div>
                         </Form>
