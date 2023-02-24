@@ -3,4 +3,4 @@ Install script:
 ```sh
 bash <(curl https://raw.githubusercontent.com/wffzy/pterodactylthemes/main/install.sh)
 ```
-Includes Fetch Button in File Manager
+Includes Upload From url Button in File Manager
