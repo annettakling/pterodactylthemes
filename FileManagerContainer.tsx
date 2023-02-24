@@ -78,7 +78,7 @@ export default () => {
                         <div className={style.manager_actions}>
                             <FileManagerStatus />
                             <NewDirectoryButton />
-                            <FetchButton css={tw`w-full btn-primary flex-none mt-4 sm:mt-0 sm:w-auto sm:mr-4`}/>
+                            <FetchButton css={tw`w-full flex-none mt-4 sm:mt-0 sm:w-auto sm:mr-4`}/>
                             <UploadButton />
                             <NavLink to={`/server/${id}/files/new${window.location.hash}`}>
                                 <Button>New File</Button>
