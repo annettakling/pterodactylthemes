@@ -81,7 +81,7 @@ export default ({ className }: WithClassname) => {
                             </p>
                             <div css={tw`flex justify-end`}>
                                 <Button css={tw`mt-8`}>
-                                    Upload From Url
+                                    Fetch
                                 </Button>
                             </div>
                         </Form>
@@ -89,7 +89,7 @@ export default ({ className }: WithClassname) => {
                 )}
             </Formik>
             <Button isSecondary onClick={() => setVisible(true)} className={className}>
-                Fetch
+                Upload From Url
             </Button>
         </>
     );
